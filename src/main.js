@@ -24,16 +24,19 @@ const getMovieDetails = async(id)=>{
     const url = `https://api.themoviedb.org/3/movie/${id}?api_key=${API_KEY}&language=en-US`
     const request =  await fetch(url)
     const res = await request.json()
+    console.log(res)
     return res
 }
 const getSimilarsMovies = async(id)=>{
     const url = `https://api.themoviedb.org/3/movie/${id}/similar?api_key=${API_KEY}&language=en-US`
     const request =  await fetch(url)
     const res = await request.json()
-    console.log(res)
     return res
 }
 window.addEventListener("hashchange", ()=>{
+    window.scroll({
+        top: 0,
+    })
     const ubicacion = window.location.hash
     // document.getElementById("home").classList.add("hidden")
     // document.getElementById("header").classList.add("hidden")
@@ -57,7 +60,7 @@ const composeCard= async(ubicacion)=>{
     const data = await getMovieDetails(movieId)
     
     const image = document.createElement("img")
-    image.setAttribute("src","https://image.tmdb.org/t/p/w500"+ data.poster_path)
+    image.setAttribute("src","https://image.tmdb.org/t/p/w500"+ data.backdrop_path)
     const titleContainer = document.createElement("h2")
     const returnContainer = document.createElement("div")
     const returnText = document.createTextNode("<")
@@ -72,6 +75,21 @@ const composeCard= async(ubicacion)=>{
     movieHeader.appendChild(returnContainer)
     movieCard.appendChild(titleContainer)
     movieCard.appendChild(descriptionContainer)
+    movieCard.innerHTML += `
+    <div class="botonera">
+    <div class="detalle">
+    <a href="${data.homepage}"><i class="material-icons">theaters</i> Ver</a>
+    </div>
+    <div class="detalle">
+    Calificaicon: ${data.vote_average}
+    </div>
+    <div class="detalle">
+    Duracion: ${data.runtime}
+    </div>
+    
+    
+    </div>
+    `
     const similars= await getSimilarsMovies(movieId)
     document.getElementById("similares").innerHTML=""
     similars.results.map(movie=> {  

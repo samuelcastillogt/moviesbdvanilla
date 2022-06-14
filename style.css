@@ -82,7 +82,8 @@ header {
 }
 
 .detalles {
-  height: 100vh;
+  height: 80vh;
+  position: relative;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -137,7 +138,6 @@ header {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  overflow: scroll;
 }
 
 #trends-container h2 {
@@ -183,6 +183,7 @@ header {
 
 #return {
   position: absolute;
+  cursor: pointer;
   top: 0;
   width: 100%;
   color: white;
@@ -193,10 +194,12 @@ header {
   filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#0d0d0d",endColorstr="#6841a6",GradientType=1);
 }
 
+.detalles-header-title {
+  font-size: 1em;
+}
+
 #detalles-card {
   background-color: white;
-  position: absolute;
-  top: 80%;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -226,6 +229,27 @@ header {
   margin: 20px;
 }
 
+.botonera {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 100%;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.botonera a {
+  text-decoration: none;
+  color: black;
+}
+
+.botonera .detalle {
+  margin: 5px;
+}
+
 .hidden {
   display: none;
 }
@@ -240,5 +264,13 @@ footer {
 footer a {
   text-decoration: none;
   color: aliceblue;
+}
+
+@media screen and (min-width: 700px) {
+  #trends {
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    overflow: visible;
+  }
 }
 /*# sourceMappingURL=style.css.map */
