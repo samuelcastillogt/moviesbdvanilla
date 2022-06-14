@@ -4,19 +4,13 @@
 }
 
 body {
-  font-family: roboto;
-  width: 100vw;
+  font-family: 'Dosis', sans-serif;
+  background-color: #000000;
 }
 
 header {
-  display: -ms-grid;
-  display: grid;
-  -ms-grid-columns: 50px 1fr 2fr;
-      grid-template-columns: 50px 1fr 2fr;
+  background-color: #ffb72d;
   padding: 20px;
-  border-bottom: 1px solid rgba(87, 81, 81, 0.164);
-  -webkit-box-shadow: 1px 1px 1px rgba(87, 81, 81, 0.164);
-          box-shadow: 1px 1px 1px rgba(87, 81, 81, 0.164);
 }
 
 .title {
@@ -29,12 +23,7 @@ header {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-}
-
-.index {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
+  font-size: 2em;
 }
 
 .buscador {
@@ -47,14 +36,20 @@ header {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
+  height: 30px;
+  margin: 10px;
 }
 
 .buscador #buscador {
-  padding: 3px;
+  height: 100%;
+  border-radius: 6px  0 0 6px;
+  background-color: white;
+  color: black;
 }
 
 .buscador #buscador-btn {
   padding: 3px;
+  border-radius: 0 6px 6px 0;
 }
 
 .buscador #buscador-btn:hover {
@@ -86,19 +81,8 @@ header {
   font-size: 1.5em;
 }
 
-.main {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -ms-flex-wrap: wrap;
-      flex-wrap: wrap;
-  margin: 0 auto;
-}
-
 .detalles {
+  height: 100vh;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -106,29 +90,33 @@ header {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  justify-self: center;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  padding: 20px;
-  position: relative;
-  width: 80%;
-}
-
-.detalles img {
-  width: 200px;
-}
-
-.detalles #cerrar {
-  position: absolute;
-  top: 10px;
-  left: 10%;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
 }
 
 .card {
   margin: 10px;
   text-decoration: none;
+  border-radius: 8px;
+  position: relative;
   color: black;
+}
+
+.card p {
+  position: absolute;
+  bottom: 10px;
+  padding: 10px;
+  background-color: rgba(0, 0, 0, 0.6);
+  color: aliceblue;
+}
+
+.card .card-img {
+  width: 200px;
+  border-radius: 8px;
 }
 
 .menu {
@@ -141,6 +129,103 @@ header {
   border-radius: 50%;
 }
 
+#trends-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  overflow: scroll;
+}
+
+#trends-container h2 {
+  margin: 10px;
+}
+
+#trends {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: nowrap;
+      flex-wrap: nowrap;
+  overflow: scroll;
+}
+
+#categorias-cotainer h2 {
+  margin: 10px;
+}
+
+#categorias {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+
+.category {
+  color: aliceblue;
+  border-radius: 8px;
+  border: 1px solid aliceblue;
+  margin: 5px;
+  padding: 5px;
+  text-decoration: none;
+}
+
+#detalles-header img {
+  width: 100%;
+  height: 100%;
+}
+
+#return {
+  position: absolute;
+  top: 0;
+  width: 100%;
+  color: white;
+  padding: 10px;
+  font-size: 3em;
+  background: #0d0d0d;
+  background: linear-gradient(164deg, #0d0d0d 0%, rgba(104, 65, 166, 0) 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#0d0d0d",endColorstr="#6841a6",GradientType=1);
+}
+
+#detalles-card {
+  background-color: white;
+  position: absolute;
+  top: 80%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 90%;
+  margin: 0 auto;
+  border-radius: 8px 8px  0 0;
+  padding: 10px;
+}
+
+#similares {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: nowrap;
+      flex-wrap: nowrap;
+  overflow: scroll;
+  margin: 20px;
+}
+
 .hidden {
   display: none;
 }
@@ -149,10 +234,11 @@ footer {
   padding: 20px;
   border-top: 1px solid rgba(87, 81, 81, 0.164);
   text-align: center;
+  color: aliceblue;
 }
 
 footer a {
   text-decoration: none;
-  color: black;
+  color: aliceblue;
 }
 /*# sourceMappingURL=style.css.map */

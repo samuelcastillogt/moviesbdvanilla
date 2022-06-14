@@ -1,48 +1,67 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@700&display=swap" rel="stylesheet">
-    <script crossorigin='anonymous' src='https://kit.fontawesome.com/86e4670193.js'></script>
-    <link rel="stylesheet" href="./style.css">
-    
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Dosis:wght@600&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./style.css" />
+
     <title>MovieDB: A movie API proyect</title>
-</head>
-<body>
-    <header>
-        <div class="menu" id="menu">
-            <i class="fa-solid fa-bars-sort"></i>
-        </div>
-        <div class="title">
-            <p>MovieDB</p>
-        </div>
-        <div class="buscador">
-            <input type="text" id="buscador" placeholder="Buscar">
-            <button id="buscador-btn">Buscar</button>
-        </div>
+  </head>
+  <body>
+    <header id="header">
+      <div class="title">
+        <p>MovieDB</p>
+      </div>
+      <div class="buscador">
+        <input type="text" id="buscador" placeholder="La chica de al lado..." />
+        <button id="buscador-btn"><i class="material-icons">search</i></button>
+      </div>
     </header>
     <div class="index">
-        <section id="sidebar" class="hidden">
-            <ul>
-                <li><a href="/">Inicio</a></li>
-                <li><a href="https://samuelcastillogt.github.io/">Portafolio</a></li>
-                <li><a href="https://samuelcastilloseo.blogspot.com/">Blog</a></li>
-                <li><a href="https://www.linkedin.com/in/seo-guatemala/">Linkedin</a></li>
-            </ul>
+      <div id="home">
+        <section id="trends-container">
+          <h2 style="color: white">Tendencias de Hoy</h2>
+          <div id="trends"></div>
         </section>
-        <section id="main" class="main"></section>
-        <section id="result"></section>
-        <section id="detalles" class="hidden">
+        <section id="categorias-cotainer">
+          <h2 style="color: white">Categorias</h2>
+          <div id="categorias"></div>
         </section>
+      </div>
+      <section id="main" class="main"></section>
+      <section id="result"></section>
+      <section id="detalles" class="hidden">
+          <div id="detalles-header"></div>
+          <center>
+            <div id="detalles-card"></div> 
+            <h2 style="color: white;">Peliculas Similares</h2> 
+            <div id="similares"></div>
+          </center>
+      </section>
     </div>
-    
-    <script type="module" src="./src/index.js"></script>
+
+    <script type="module" src="./src/main.js"></script>
     <footer>
-        <p>Una pagina de <a href="https://samuelcastillogt.github.io">Samuel Castillo</a>, <a href="https://react-guatemala.vercel.app">React developer</a></p>
+      <p>
+        Una pagina de
+        <a href="https://samuelcastillogt.github.io">Samuel Castillo</a>,
+        <a href="https://react-guatemala.vercel.app">React developer</a>
+      </p>
     </footer>
-</body>
+  </body>
 </html>
